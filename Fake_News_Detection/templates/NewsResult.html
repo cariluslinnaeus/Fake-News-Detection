@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Fake News Detection</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <style>
+        li {
+            color: white;
+        }
+        body{
+            background: url('static/content/back.gif');
+        }
+        .active
+        {
+            color:black;
+            background-color:dimgray;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            height: 45px;
+        }
+        .vl {
+            border-left: 700px solid black;
+            height: 5px;
+            position: absolute;
+            left: 25%;
+            margin-left: -3px;
+            top: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="color:darkgoldenrod">Fake News Detection</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a style="color:white" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a style="color:white" href="{{ url_for('detect') }}">Detect</a></li>
+                    <li><a style="color:white" href="{{ url_for('about') }}">About</a></li>
+                    <li><a style="color:white" href="{{ url_for('contact') }}">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 style="text-align:center;color:blue;font-family:'Bookman Old Style'">Result Centre</h1>
+        <div class="vl"></div><br /><br />
+        <div style="font-family: 'Times New Roman', Times, serif;font-size: 24px;margin-left: 38%;">
+            Prediction: <b>{{result}}</b> News<br><br>
+            Prediction Accuracy: <b>{{score}}%</b>
+        </div>
+
+    </div><br /><br />
+    <div class="footer">
+        <p></p>
+        <p style="margin-left:2%">&copy; {{ year }} - Fake News Detection</p>
+    </div>
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

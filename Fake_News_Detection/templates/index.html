@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Fake News Detection</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <style>
+        li {
+            color:white;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color:black;
+            color: white;
+            height:45px;
+        }
+        body{
+            background: url('static/content/back.gif');
+        }
+        .active
+        {
+            color:black;
+            background-color:dimgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="color:darkgoldenrod">Fake News Detection</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="active" style="color:white" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a style="color:white" href="{{ url_for('detect') }}">Detect</a></li>
+                    <li><a style="color:white" href="{{ url_for('about') }}">About</a></li>
+                    <li><a style="color:white" href="{{ url_for('contact') }}">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div><br>
+
+    <div class="container body-content">
+        <div class="jumbotron" style="background: url('static/content/fake_news.png');">
+            <h1 style="color:blue">Fake News Detection</h1>
+            <p style = "color: green;">This application detects the prescence of reality in News. It classifies news as "Fake" or "True".</p>
+            <p><a href="{{url_for('about')}}" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Getting started</h2>
+                <p>
+                    Fake news and hoaxes have been there since before the advent of the Internet. 
+                    The widely accepted definition of Internet fake news is: fictitious articles deliberately......
+                </p>
+                <p><a class="btn btn-default" href="{{url_for('about')}}">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Detect Fake News</h2>
+                <p>Detecting fake news is made easier. You simply type or paste the news text in the given textarea followed by a submt action.</p>
+                <p><a class="btn btn-default" href="{{url_for('detect')}}">Detect &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Contact Us</h2>
+                <p>You can easily get in touch with the developers. Find out how you can detect fake news freely.</p>
+                <p><a class="btn btn-default" href="{{url_for('contact')}}">Contact Us &raquo;</a></p>
+            </div>
+        </div>
+        <hr />
+
+    </div><br />
+    <div class="footer">
+        <p></p>
+        <p style="margin-left:2%">&copy; {{ year }} - Fake News Detection</p>
+    </div>
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Fake News Detection</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <style>
+        li {
+            color: white;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            height: 45px;
+        }
+        .button1
+        {
+            margin-top: 30px;
+            display:inline-block;
+            padding: 15px 25px;
+            font-size:15px;
+            cursor:pointer;
+            text-align:center;
+            text-decoration: none;
+            outline: none;
+            color:#fff;
+            background-color:red;
+            border:none;
+            border-radius: 15px;
+            box-shadow: 0 6px #999;
+            margin-right: 0px;
+            font-weight: bold;
+        }
+        .active
+        {
+            color:black;
+            background-color:dimgray;
+        }
+        body{
+            background: url('static/content/back.gif');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="color:darkgoldenrod">Fake News Detection</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a style="color:white" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a style="color:white" href="{{ url_for('detect') }}">Detect</a></li>
+                    <li><a style="color:white" href="{{ url_for('about') }}">About</a></li>
+                    <li><a class="active" style="color:white" href="{{ url_for('contact') }}">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%;background-color:lightgray;border-radius:15px">
+        
+        <form style="margin-left:20%;" method="post" action="mailto:oselucarilus1@gmail.com">
+            <br>
+            <h1 style="color: blue;font-family: 'Times New Roman', Times, serif;margin-left: 20%;">Contact Us</h1>
+
+            <b style="font-family: 'Times New Roman', Times, serif;">Fill the following form.</b><br>
+            <div style="padding-top: 10px; padding-bottom: 10px">
+                Name<br />
+                <input type="text" name="name" style="max-width:100%;display:block;width:60%;padding-top:5px;padding-bottom:5px;box-sizing:border-box;border-style:groove" /><br />
+            </div>
+            <div style="padding-top: 8px; padding-bottom: 10px">
+                Email Address<br />
+                <input type="email" name="email" style="max-width: 100%; display: block; width: 60%; padding-top: 5px; padding-bottom: 5px; box-sizing: border-box; border-style: groove;" /><br />
+            </div>
+            <div style="padding-top: 8px; padding-bottom: 10px">
+                Subject<br />
+                <input type="text" name="subject" style="max-width: 100%; display: block; width: 60%; padding-top: 5px; padding-bottom: 5px; box-sizing: border-box; border-style: groove;" /><br />
+            </div>
+            <div style="padding-top: 8px; padding-bottom: 10px">
+                Your Message<br />
+                <textarea name="message" style="height:5;max-width:100%;display:block;width:60%;padding-top:5px;padding-bottom:5px;box-sizing:border-box;border-style:groove;"></textarea>
+            </div>
+            <div style="padding-top: 8px; padding-bottom: 10px">
+                <input type="submit" value="Predict"  style="margin-left: 200px;background-color: green;margin-right: 50px;"class ="button1">
+                <input type="reset" value="Reset" class="button1">
+            </div>
+
+        </form>
+    </div>
+
+    </div><br /><br />
+    <div class="footer">
+        <p></p>
+        <p style="margin-left:2%">&copy; {{ year }} - Fake News Detection</p>
+    </div>
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
